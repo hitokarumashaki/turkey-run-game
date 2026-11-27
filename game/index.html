@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turkey Trot — A Thanksgiving Escape</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #2b1a0e; }
+  body { display: flex; align-items: center; justify-content: center; }
+  #game { display: block; touch-action: none; background: #ffe3a3; }
+  #status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .touch-btn {
+    position: fixed; bottom: 18px; z-index: 5;
+    min-width: 76px; padding: 12px 16px; border: 0; border-radius: 999px;
+    background: rgba(255, 215, 0, 0.92); color: #3a2200;
+    font: bold 16px Trebuchet MS, Verdana, sans-serif; cursor: pointer;
+  }
+  #duck-btn { right: 110px; }
+  #hide-btn { right: 18px; }
+  .hint {
+    position: fixed; bottom: 18px; left: 18px; z-index: 5;
+    color: rgba(255, 255, 255, 0.75);
+    font: 14px Trebuchet MS, Verdana, sans-serif;
+  }
+</style>
+</head>
+<body>
+<canvas id="game" aria-label="Turkey Trot: a turkey escapes the farmer before Thanksgiving dinner"></canvas>
+<p id="status" role="status" aria-live="polite"></p>
+<button id="duck-btn" class="touch-btn" type="button">DUCK</button>
+<button id="hide-btn" class="touch-btn" type="button">HIDE</button>
+<p class="hint">Space / click: jump &nbsp;•&nbsp; Down: duck &nbsp;•&nbsp; M: mute</p>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
